@@ -4,34 +4,64 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import junit.framework.Test;
 
 public class CounterActivity extends AppCompatActivity {
 
+        // Declare variables for use:
+    private Button mPlusButton;
+    private Button mMinusButton;
+    private TextView mNumberOfPeople;
+    private int mPersonCount = 0;
+
+        // Override the onCreate method:
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_counter);
+
+            // Assign the variables to the buttons/textviews:
+        mPlusButton = (Button)findViewById(R.id.plus_button);
+        mMinusButton = (Button)findViewById(R.id.minus_button);
+        mNumberOfPeople = (TextView)findViewById(R.id.number_of_people);
+
+        mPlusButton.setOnClickListener(new View.OnClickListener() {
+            // Set so that on click of plus button, the person count is incremented by 1,
+            // call the method to update the number displayed, and call the method to test for toast:
+            @Override
+            public void onClick(View v) {
+                mPersonCount++;
+                UpdateNumber();
+                TestForToast();
+            }
+        });
+
+        mMinusButton.setOnClickListener(new View.OnClickListener() {
+            // Set so that on click of minus button, the person count is decremented by 1,
+            // and call the method to update the number displayed:
+            @Override
+            public void onClick(View v) {
+                mPersonCount--;
+                UpdateNumber();
+            }
+        });
+
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+        // Method to update the number displayed:
+    private void UpdateNumber() {
+        mNumberOfPeople.setText(Integer.toString(mPersonCount));
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        // Method to test if over 20 people has been reached (by adding ONLY, and ONLY from 20)
+    private void TestForToast() {
+        if (mPersonCount > 20 & (mPersonCount - 1) == 20) {
+            Toast.makeText(this, R.string.count_over_20, Toast.LENGTH_SHORT).show();
         }
-
-        return super.onOptionsItemSelected(item);
     }
 }

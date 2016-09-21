@@ -3,12 +3,16 @@
 
 ## Author
 
+Alyssa Mahler
+
 ## Description
 
 Create a person counter. The UI should have a + button, and a - button as well as a textview to store the value of the current number.
-When the app launches, the counter will be at zero. When the + button is pressed, it will increase the counter. When the - button is pressed, it will decrease the number.
+When the app launches, the counter will be at zero. When the + button is pressed, it will increase the counter. When the - button is pressed, 
+it will decrease the number.
 
-If the counter goes above 20, the app will toast a message that it is over 20. This message will only appear when the counter goes over 20. It should not appear for every number over 20, and it should not appear when decrementing regardless of the current number.
+If the counter goes above 20, the app will toast a message that it is over 20. This message will only appear when the counter goes over 20. 
+It should not appear for every number over 20, and it should not appear when decrementing regardless of the current number.
 
 Solution Requirements:
 
@@ -38,4 +42,8 @@ This application should be very similar to the first application in the book.
 
 ## Outside Resources Used
 
+cis298inclass1 and cis298inclass2 files 
+
 ## Known Problems, Issues, And/Or Errors in the Program
+
+none

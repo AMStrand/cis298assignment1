@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">CIS298Assignment1</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string name="number_of_people">mNumberOfPeople</string>
+    <string name="plus_button">+</string>
+    <string name="minus_button">-</string>
+
+    <string name="count_over_20">WOW! You have over 20 people!</string>
+
 </resources>
